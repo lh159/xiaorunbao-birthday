@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4ead8">
+  <meta name="description" content="写给小润宝的 09·29 生日旅行手账。">
+  <title>给小润宝的旅行手账</title>
+  <link rel="preload" href="assets/photos/8eb6fa00f5a05f1bcc346507f772bea0.webp" as="image" type="image/webp">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f4ead8'/%3E%3Cpath d='M32 49S12 38 12 24c0-7 9-12 20-2 11-10 20-5 20 2 0 14-20 25-20 25Z' fill='%23a94e42'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --paper: #f5ecd9;
+      --paper-deep: #ead7b8;
+      --ink: #3f332c;
+      --muted: #75675d;
+      --brown: #7b563c;
+      --red: #a54e42;
+      --blue: #4e7f91;
+      --white: #fffdf8;
+      --shadow: 0 18px 48px rgba(70, 50, 35, .16);
+      --hand: "Kaiti SC", "STKaiti", "KaiTi", serif;
+      --body: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: #d6c2a3; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      font-family: var(--body);
+      background:
+        radial-gradient(circle at 14% 9%, rgba(255,255,255,.65) 0 1px, transparent 2px),
+        radial-gradient(circle at 74% 31%, rgba(110,84,55,.11) 0 1px, transparent 2px),
+        linear-gradient(90deg, rgba(122,86,60,.025) 1px, transparent 1px),
+        var(--paper);
+      background-size: 29px 31px, 37px 41px, 4px 100%, auto;
+      overflow-x: hidden;
+    }
+
+    button, input { font: inherit; }
+    button { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+
+    .cover {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 32px 20px;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(104,76,52,.08), transparent 42%, rgba(69,119,139,.08));
+      z-index: -1;
+    }
+    .cover-book {
+      width: min(760px, 92vw);
+      min-height: min(680px, 86svh);
+      padding: clamp(30px, 7vw, 74px);
+      border: 1px solid rgba(96,67,45,.22);
+      border-radius: 8px 22px 22px 8px;
+      background:
+        linear-gradient(90deg, rgba(93,61,42,.16), transparent 7%),
+        linear-gradient(rgba(255,255,255,.18), rgba(255,255,255,.18)),
+        #c99c68;
+      box-shadow: -13px 11px 0 #a77a50, -22px 20px 42px rgba(63,42,28,.28);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .cover-book::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px dashed rgba(76,49,33,.34);
+      border-radius: 4px 16px 16px 4px;
+      pointer-events: none;
+    }
+    .date-stamp {
+      color: var(--red);
+      border: 3px double currentColor;
+      border-radius: 50%;
+      width: 92px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      transform: rotate(-9deg);
+      font: 700 1.15rem/1 var(--hand);
+      letter-spacing: .08em;
+      margin-bottom: 22px;
+      background: rgba(244,234,216,.28);
+    }
+    .eyebrow { letter-spacing: .22em; font-size: .82rem; color: #654b39; margin: 0 0 16px; }
+    h1 {
+      font: 700 clamp(2.4rem, 8vw, 5.2rem)/1.14 var(--hand);
+      margin: 0;
+      color: #493528;
+      text-wrap: balance;
+    }
+    .cover-line {
+      width: 90px;
+      height: 2px;
+      background: var(--red);
+      margin: 28px auto;
+      transform: rotate(-2deg);
+    }
+    .cover-copy { margin: 0; font: 1.15rem/1.8 var(--hand); color: #5b4436; }
+    .open-button {
+      margin-top: 36px;
+      border: 0;
+      color: var(--white);
+      background: var(--red);
+      padding: 14px 27px;
+      min-height: 50px;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 8px 0 #78382f, 0 14px 26px rgba(80,41,35,.22);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .open-button:hover { transform: translateY(-2px); box-shadow: 0 10px 0 #78382f, 0 17px 28px rgba(80,41,35,.22); }
+    .open-button:active { transform: translateY(5px); box-shadow: 0 3px 0 #78382f; }
+
+    .intro {
+      padding: 110px 20px 65px;
+      text-align: center;
+      max-width: 720px;
+      margin: auto;
+    }
+    .intro-kicker { color: var(--red); letter-spacing: .16em; font-weight: 700; }
+    .intro h2, .finale h2 { font: 700 clamp(2rem, 6vw, 4.5rem)/1.25 var(--hand); margin: 12px 0 22px; }
+    .intro p { color: var(--muted); line-height: 1.9; font-size: 1.05rem; margin: 0; }
+
+    .journey { width: min(1120px, calc(100% - 36px)); margin: 0 auto; position: relative; }
+    .journey::before {
+      content: "";
+      position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 2px;
+      background: repeating-linear-gradient(to bottom, var(--red) 0 8px, transparent 8px 18px);
+      opacity: .34;
+    }
+    .chapter {
+      min-height: 84vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: clamp(28px, 7vw, 92px);
+      padding: 72px 0 116px;
+      position: relative;
+    }
+    .chapter:nth-child(even) .photo-stack { order: 2; }
+    .chapter::before {
+      content: attr(data-stop);
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 54px; height: 54px;
+      transform: translate(-50%,-50%) rotate(-7deg);
+      display: grid; place-items: center;
+      border-radius: 50%;
+      color: var(--red);
+      background: var(--paper);
+      border: 2px solid var(--red);
+      font: 700 .83rem/1 var(--hand);
+      z-index: 3;
+    }
+    .photo-stack {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px 18px;
+      align-items: start;
+      position: relative;
+    }
+    .photo-stack.count-1 { grid-template-columns: minmax(0, 1fr); }
+    .photo-stack.count-1 .polaroid { width: min(82%, 430px); justify-self: center; }
+    .polaroid {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: 11px 11px 56px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      transition: transform .85s cubic-bezier(.2,.7,.2,1), opacity .7s ease;
+    }
+    .polaroid:nth-child(4n+1) { transform: rotate(-4deg) translateY(30px); }
+    .polaroid:nth-child(4n+2) { transform: rotate(4deg) translateY(42px); }
+    .polaroid:nth-child(4n+3) { transform: rotate(3deg) translateY(28px); }
+    .polaroid:nth-child(4n) { transform: rotate(-3deg) translateY(38px); }
+    .chapter.visible .polaroid:nth-child(4n+1) { transform: rotate(-4deg) translateY(0); }
+    .chapter.visible .polaroid:nth-child(4n+2) { transform: rotate(4deg) translateY(0); }
+    .chapter.visible .polaroid:nth-child(4n+3) { transform: rotate(3deg) translateY(0); }
+    .chapter.visible .polaroid:nth-child(4n) { transform: rotate(-3deg) translateY(0); }
+    .polaroid::before {
+      content: "";
+      position: absolute;
+      width: 92px; height: 25px;
+      background: rgba(86,140,155,.47);
+      top: -14px; left: 50%;
+      transform: translateX(-50%) rotate(2deg);
+      box-shadow: 0 1px 2px rgba(30,50,55,.12);
+    }
+    .polaroid img { width: 100%; height: auto; max-height: 390px; object-fit: contain; display: block; background: #e8e0d3; }
+    .polaroid figcaption { position: absolute; left: 10px; right: 10px; bottom: 9px; text-align: center; color: #675a51; font: .9rem/1.35 var(--hand); }
+    .chapter-note {
+      max-width: 410px;
+      padding: 34px 32px 30px;
+      background: #fff8c9;
+      box-shadow: 7px 9px 22px rgba(78,58,39,.13);
+      transform: rotate(1.2deg);
+      position: relative;
+    }
+    .chapter:nth-child(even) .chapter-note { transform: rotate(-1.2deg); justify-self: end; }
+    .chapter-note::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(transparent 0 31px, rgba(95,134,150,.16) 32px); pointer-events: none; }
+    .chapter-no { color: var(--red); font-weight: 700; font-size: .78rem; letter-spacing: .2em; position: relative; }
+    .chapter-note h3 { font: 700 clamp(1.8rem, 4vw, 2.8rem)/1.2 var(--hand); margin: 13px 0 8px; position: relative; }
+    .chapter-date { color: var(--blue); font: 1rem var(--hand); margin: 0 0 30px; position: relative; }
+    .chapter-story { line-height: 2; margin: 0; color: #655c54; font: 1.05rem/2 var(--hand); position: relative; }
+    .memory-list { margin: 24px 0 0; padding: 0; list-style: none; position: relative; }
+    .memory-list li { padding: 8px 0 8px 18px; color: #655c54; font: 1rem/1.75 var(--hand); position: relative; }
+    .memory-list li::before { content: "♥"; color: var(--red); position: absolute; left: 0; top: 9px; font-size: .75rem; }
+    .pencil-line { display: inline-block; min-width: 8em; border-bottom: 1px dashed #a29484; color: #8b7e72; }
+
+    .music-player {
+      position: fixed;
+      right: max(18px, env(safe-area-inset-right));
+      bottom: max(18px, env(safe-area-inset-bottom));
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,253,248,.92);
+      border: 1px solid rgba(109,80,58,.2);
+      border-radius: 999px;
+      padding: 8px 14px 8px 8px;
+      box-shadow: 0 12px 32px rgba(63,45,32,.2);
+      backdrop-filter: blur(12px);
+    }
+    .record-button { width: 52px; height: 52px; border-radius: 50%; border: 0; cursor: pointer; background: radial-gradient(circle, #d6a353 0 9%, #222 10% 18%, #444 19% 20%, #181818 21% 29%, #3a3a3a 30% 31%, #171717 32% 46%, #3a3a3a 47% 48%, #171717 49%); color: transparent; position: relative; }
+    .record-button::after { content: "▶"; color: #fff; font-size: .75rem; position: absolute; inset: 0; display: grid; place-items: center; filter: drop-shadow(0 1px 2px #000); }
+    .music-player.playing .record-button { animation: spin 4s linear infinite; }
+    .music-player.playing .record-button::after { content: "Ⅱ"; }
+    .track { min-width: 156px; }
+    .track strong, .track span { display: block; }
+    .track strong { font-size: .82rem; }
+    .track span { color: var(--muted); font-size: .72rem; margin-top: 2px; }
+    .volume { width: 70px; accent-color: var(--red); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .finale { min-height: 100svh; padding: 110px 20px 150px; display: grid; place-items: center; text-align: center; position: relative; }
+    .finale-inner { width: min(880px, 100%); }
+    .heart-collage { width: min(560px, 90vw); aspect-ratio: 1.12; margin: 0 auto 70px; position: relative; }
+    .heart-photo { position: absolute; width: 24%; aspect-ratio: 1; object-fit: cover; border: 6px solid var(--white); box-shadow: 0 9px 22px rgba(63,44,31,.18); opacity: 0; transform: scale(.55) translateY(40px) rotate(var(--r)); transition: 1s cubic-bezier(.2,.8,.2,1); transition-delay: var(--delay); }
+    .finale.visible .heart-photo { opacity: 1; transform: scale(1) translateY(0) rotate(var(--r)); }
+    .heart-photo:nth-child(1) { left: 16%; top: 6%; --r:-7deg; --delay:.05s; }
+    .heart-photo:nth-child(2) { left: 38%; top: 1%; --r:3deg; --delay:.13s; }
+    .heart-photo:nth-child(3) { left: 60%; top: 7%; --r:7deg; --delay:.21s; }
+    .heart-photo:nth-child(4) { left: 7%; top: 28%; --r:-4deg; --delay:.29s; }
+    .heart-photo:nth-child(5) { left: 29%; top: 23%; --r:4deg; --delay:.37s; }
+    .heart-photo:nth-child(6) { left: 51%; top: 27%; --r:-5deg; --delay:.45s; }
+    .heart-photo:nth-child(7) { left: 70%; top: 28%; --r:5deg; --delay:.53s; }
+    .heart-photo:nth-child(8) { left: 28%; top: 51%; --r:-3deg; --delay:.61s; }
+    .heart-photo:nth-child(9) { left: 50%; top: 51%; --r:5deg; --delay:.69s; }
+    .heart-photo:nth-child(10) { left: 39%; top: 73%; --r:-2deg; --delay:.77s; }
+    .final-stamp { color: var(--red); font: 700 1rem var(--hand); letter-spacing: .18em; }
+    .finale h2 { color: var(--red); margin-bottom: 18px; }
+    .final-message { width: min(620px, 100%); margin: auto; padding: 30px; color: #5d5148; background: rgba(255,248,201,.72); font: 1.1rem/2 var(--hand); transform: rotate(-.7deg); box-shadow: 5px 8px 24px rgba(79,59,40,.1); }
+    .replay { margin-top: 36px; min-height: 48px; padding: 11px 22px; border-radius: 999px; border: 1px solid var(--brown); color: var(--brown); background: transparent; cursor: pointer; }
+    .signature { margin-top: 55px; color: var(--muted); font: 1rem var(--hand); }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .edit-trigger {
+      position: fixed;
+      top: max(18px, env(safe-area-inset-top));
+      right: max(18px, env(safe-area-inset-right));
+      z-index: 30;
+      border: 1px solid rgba(83,59,43,.28);
+      border-radius: 999px;
+      padding: 10px 16px;
+      color: var(--brown);
+      background: rgba(255,253,248,.9);
+      box-shadow: 0 8px 24px rgba(63,45,32,.13);
+      backdrop-filter: blur(12px);
+      cursor: pointer;
+    }
+    .editor-view { display: none; min-height: 100svh; padding: 36px 20px 100px; }
+    body.editing > .cover,
+    body.editing > main,
+    body.editing > .music-player,
+    body.editing > .edit-trigger { display: none; }
+    body.editing > .editor-view { display: block; }
+    .editor-shell { width: min(1120px, 100%); margin: 0 auto; }
+    .editor-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 25px;
+      border-bottom: 1px dashed rgba(96,68,49,.28);
+    }
+    .back-button, .secondary-button, .danger-button, .export-button, .copy-place {
+      border: 1px solid rgba(91,63,45,.32);
+      border-radius: 999px;
+      padding: 10px 16px;
+      min-height: 44px;
+      background: var(--white);
+      color: var(--brown);
+      cursor: pointer;
+    }
+    .editor-heading { padding: 55px 0 32px; }
+    .editor-heading h2 { font: 700 clamp(2rem, 5vw, 3.7rem)/1.2 var(--hand); margin: 8px 0 14px; }
+    .editor-heading p { max-width: 720px; color: var(--muted); line-height: 1.8; margin: 0; }
+    .progress-wrap { min-width: min(280px, 46vw); }
+    .progress-label { display: flex; justify-content: space-between; font-size: .9rem; margin-bottom: 8px; color: var(--muted); }
+    .progress-track { height: 8px; border-radius: 999px; background: var(--paper-deep); overflow: hidden; }
+    .progress-bar { width: 0; height: 100%; border-radius: inherit; background: var(--red); transition: width .3s ease; }
+    .save-notice { min-height: 24px; margin-top: 12px; color: var(--blue); font-size: .9rem; }
+    .editor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+    .annotation-card {
+      display: grid;
+      grid-template-columns: minmax(150px, .82fr) minmax(0, 1.18fr);
+      gap: 20px;
+      padding: 18px;
+      background: rgba(255,253,248,.82);
+      border: 1px solid rgba(95,69,50,.16);
+      border-radius: 14px;
+      box-shadow: 0 13px 30px rgba(73,52,37,.09);
+    }
+    .annotation-preview { margin: 0; align-self: start; }
+    .annotation-preview img { width: 100%; max-height: 300px; object-fit: contain; display: block; background: #e9e0d2; border: 8px solid #fff; box-shadow: 0 8px 18px rgba(63,45,32,.14); }
+    .annotation-preview figcaption { margin-top: 10px; font: .92rem var(--hand); color: var(--muted); word-break: break-all; }
+    .annotation-fields { display: grid; gap: 14px; align-content: start; }
+    .field-row { display: grid; gap: 6px; }
+    .field-row label { color: var(--brown); font-size: .88rem; font-weight: 700; }
+    .field-row input, .field-row textarea {
+      width: 100%;
+      border: 1px solid rgba(92,67,49,.24);
+      border-radius: 9px;
+      padding: 11px 12px;
+      color: var(--ink);
+      background: #fffdf8;
+      font-size: 1rem;
+    }
+    .field-row textarea { min-height: 100px; resize: vertical; line-height: 1.6; }
+    .compact-fields { display: grid; grid-template-columns: minmax(0, 1fr) 84px; gap: 10px; }
+    .copy-place { justify-self: start; min-height: 38px; padding: 7px 12px; font-size: .85rem; }
+    .editor-actions {
+      position: sticky;
+      bottom: 18px;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 38px;
+      padding: 13px;
+      border: 1px solid rgba(95,69,50,.18);
+      border-radius: 16px;
+      background: rgba(255,253,248,.92);
+      box-shadow: 0 12px 32px rgba(63,45,32,.16);
+      backdrop-filter: blur(12px);
+    }
+    .export-button { color: #fff; background: var(--red); border-color: var(--red); font-weight: 700; }
+    .danger-button { color: var(--red); }
+    .editor-warning { color: var(--red); font-weight: 700; }
+
+    @media (max-width: 780px) {
+      .cover-book { min-height: 76svh; }
+      .journey::before { left: 20px; }
+      .chapter { grid-template-columns: 1fr; gap: 24px; min-height: auto; padding: 70px 0 105px 56px; }
+      .chapter::before { left: 20px; top: 82px; width: 42px; height: 42px; font-size: .7rem; }
+      .chapter:nth-child(even) .photo-stack { order: 0; }
+      .photo-stack { gap: 22px 13px; }
+      .polaroid { width: 100%; }
+      .polaroid img { max-height: 360px; }
+      .chapter-note, .chapter:nth-child(even) .chapter-note { justify-self: stretch; max-width: none; transform: rotate(-.5deg); padding: 29px 25px 27px; }
+      .music-player { padding-right: 10px; }
+      .track { min-width: 0; max-width: 118px; }
+      .track strong, .track span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .volume { display: none; }
+      .heart-photo { border-width: 4px; }
+      .editor-grid { grid-template-columns: 1fr; }
+      .editor-topbar { align-items: stretch; flex-direction: column; }
+      .progress-wrap { width: 100%; }
+    }
+
+    @media (max-width: 430px) {
+      .cover-book { width: 94vw; padding-inline: 28px; box-shadow: -8px 8px 0 #a77a50, -13px 15px 28px rgba(63,42,28,.25); }
+      .polaroid { padding: 9px 9px 35px; }
+      .polaroid img { max-height: 320px; }
+      .polaroid figcaption { font-size: .78rem; bottom: 7px; }
+      .track span { display: none; }
+      .record-button { width: 46px; height: 46px; }
+      .heart-collage { margin-bottom: 50px; }
+      .annotation-card { grid-template-columns: 1fr; }
+      .annotation-preview img { max-height: 420px; }
+      .editor-actions { flex-wrap: wrap; }
+      .editor-actions button { flex: 1; white-space: nowrap; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal, .heart-photo { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="cover" id="top">
+    <div class="cover-book">
+      <div class="date-stamp" aria-label="生日九月二十九日">09<br>29</div>
+      <p class="eyebrow">HAPPY BIRTHDAY</p>
+      <h1>给小润宝的<br>旅行手账</h1>
+      <div class="cover-line" aria-hidden="true"></div>
+      <p class="cover-copy">这一册，装着我们一起走过的地方。</p>
+      <button class="open-button" id="openBook" type="button">打开我们的手账</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro reveal" aria-labelledby="intro-title">
+      <p class="intro-kicker">OUR LITTLE JOURNEY</p>
+      <h2 id="intro-title">一起走过的路，<br>都变成了想珍藏的日子。</h2>
+      <p>有些地点还没有写下名字。<br>因为这一页，想等我们亲自把回忆补完整。</p>
+    </section>
+    <div class="journey" id="journey" aria-label="旅行照片日记"></div>
+
+    <section class="finale reveal" id="finale" aria-labelledby="final-title">
+      <div class="finale-inner">
+        <div class="heart-collage" id="heartCollage" aria-label="由旅行照片组成的爱心"></div>
+        <div class="final-stamp">09 · 29</div>
+        <h2 id="final-title">小润宝，生日快乐！</h2>
+        <div class="final-message">
+          我们要天长地久。<br>
+          未来还有很多地方，想继续和你一起去。<br>
+          生日快乐，我的小润宝。
+        </div>
+        <button class="replay" id="replay" type="button">从第一站再看一遍</button>
+        <p class="signature">to 小润宝 · with love</p>
+      </div>
+    </section>
+  </main>
+
+  <aside class="music-player" id="musicPlayer" aria-label="背景音乐播放器">
+    <button class="record-button" id="playButton" type="button" aria-label="播放陈绮贞《夏天蒙太奇》">播放</button>
+    <div class="track" aria-hidden="true">
+      <strong>夏天蒙太奇</strong>
+      <span>陈绮贞</span>
+    </div>
+    <label>
+      <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">音量</span>
+      <input class="volume" id="volume" type="range" min="0" max="1" step="0.05" value="0.62">
+    </label>
+    <audio id="audio" preload="metadata" loop src="assets/audio/summer-montage.mp3"></audio>
+  </aside>
+
+  <section class="editor-view" id="editorView" aria-labelledby="editorTitle">
+    <div class="editor-shell">
+      <div class="editor-topbar">
+        <button class="back-button" id="backToBook" type="button">← 返回旅行手账</button>
+        <div class="progress-wrap" aria-live="polite">
+          <div class="progress-label"><span>标注进度</span><strong id="progressText">0 / 14</strong></div>
+          <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+          <div class="save-notice" id="saveNotice">填写内容会自动保存在这台设备</div>
+        </div>
+      </div>
+      <header class="editor-heading">
+        <p class="intro-kicker">PHOTO NOTES</p>
+        <h2 id="editorTitle">亲手补上每一站的回忆</h2>
+        <p>填写地点、日期和故事，并用顺序决定照片出现的先后。完成后点击“导出标注文件”，再把文件发给我，我会按地点重新分组并生成最终版本。</p>
+      </header>
+      <div class="editor-grid" id="editorGrid"></div>
+      <div class="editor-actions">
+        <button class="danger-button" id="clearAnnotations" type="button">清空重填</button>
+        <button class="export-button" id="exportAnnotations" type="button">导出标注文件</button>
+      </div>
+    </div>
+  </section>
+
+  <noscript><p style="padding:2rem;text-align:center">请开启 JavaScript 以查看完整的旅行手账。</p></noscript>
+
+  <script type="module">
+    import {
+      createDefaultAnnotations,
+      normalizeAnnotations,
+      createExportPayload,
+      annotationProgress,
+      sortAnnotations,
+      groupAnnotationsByPlace,
+    } from "./annotation-model.mjs";
+
+    const photoAnnotations = [
+      { id: "IMG_2491", place: "深圳", date: "02.01", story: "我们要天长地久", order: 1 },
+      { id: "IMG_2445", place: "深圳", date: "02.01", story: "我们今年的第一次见面嘿嘿", order: 2 },
+      { id: "IMG_2703", place: "广州", date: "02.08", story: "男帅女靓", order: 3 },
+      { id: "IMG_3479", place: "西双版纳", date: "02.21", story: "我们的丛林探险", order: 4 },
+      { id: "IMG_3656", place: "西双版纳", date: "02.21", story: "呼叫邦哥大", order: 5 },
+      { id: "IMG_4010", place: "昆明", date: "02.23", story: "海鸥来临，教堂里举行着婚礼", order: 6 },
+      { id: "IMG_4003", place: "昆明", date: "02.23", story: "海鸥来临，但愿那海风再起", order: 7 },
+      { id: "IMG_5061", place: "中卫", date: "04.05", story: "记得是大风天，风沙灌进了我的耳鼻喉中，连同思念一起，被我带进了广州", order: 8 },
+      { id: "IMG_5624", place: "重庆", date: "05.01", story: "gogogo出发咯", order: 9 },
+      { id: "IMG_5732", place: "重庆", date: "05.01", story: "这张很搞怪哈哈哈就加上了", order: 9 },
+      { id: "IMG_5663", place: "重庆", date: "05.01", story: "愿多重庆", order: 10 },
+      { id: "IMG_6311", place: "重庆", date: "05.04", story: "山清水秀人美", order: 11 },
+      { id: "IMG_8801", place: "澳门", date: "08.08", story: "我们是冠军！", order: 11 },
+      { id: "8eb6fa00f5a05f1bcc346507f772bea0", place: "珠海", date: "08.09", story: "听说被鲸鲨眷顾的恋人，能走到永远", order: 12 },
+    ];
+    const photos = photoAnnotations.map(photo => photo.id);
+    const chapters = groupAnnotationsByPlace(photoAnnotations);
+
+    const journey = document.querySelector("#journey");
+    chapters.forEach((chapter, chapterIndex) => {
+      const section = document.createElement("section");
+      section.className = "chapter reveal";
+      const stop = String(chapterIndex + 1).padStart(2, "0");
+      section.dataset.stop = stop;
+      section.setAttribute("aria-labelledby", `chapter-${chapterIndex + 1}`);
+      const stack = document.createElement("div");
+      stack.className = `photo-stack count-${chapter.photos.length}`;
+      chapter.photos.forEach((name, photoIndex) => {
+        const figure = document.createElement("figure");
+        figure.className = "polaroid";
+        const priority = chapterIndex === 0 && photoIndex === 0 ? "eager" : "lazy";
+        figure.innerHTML = `<img src="assets/photos/${name.id}.webp" alt="${name.place}的旅行照片" loading="${priority}" decoding="async"><figcaption>${name.story}</figcaption>`;
+        stack.appendChild(figure);
+      });
+      const note = document.createElement("article");
+      note.className = "chapter-note";
+      note.innerHTML = `
+        <span class="chapter-no">JOURNEY ${stop}</span>
+        <h3 id="chapter-${chapterIndex + 1}">${chapter.place}</h3>
+        <p class="chapter-date">${chapter.dates.join(" · ")}</p>
+        <ul class="memory-list">${chapter.photos.map(photo => `<li>${photo.story}</li>`).join("")}</ul>`;
+      section.append(stack, note);
+      journey.appendChild(section);
+    });
+
+    const heart = document.querySelector("#heartCollage");
+    photos.slice(0, 10).forEach((name, index) => {
+      const img = document.createElement("img");
+      img.className = "heart-photo";
+      img.src = `assets/photos/${name}.webp`;
+      img.alt = `我们的旅行回忆 ${index + 1}`;
+      img.loading = "lazy";
+      heart.appendChild(img);
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+
+    const player = document.querySelector("#musicPlayer");
+    const audio = document.querySelector("#audio");
+    const playButton = document.querySelector("#playButton");
+    const volume = document.querySelector("#volume");
+    audio.volume = Number(volume.value);
+
+    async function toggleMusic() {
+      if (audio.paused) {
+        try {
+          await audio.play();
+          player.classList.add("playing");
+          playButton.setAttribute("aria-label", "暂停陈绮贞《夏天蒙太奇》");
+        } catch (_) {
+          player.classList.remove("playing");
+        }
+      } else {
+        audio.pause();
+        player.classList.remove("playing");
+        playButton.setAttribute("aria-label", "播放陈绮贞《夏天蒙太奇》");
+      }
+    }
+    playButton.addEventListener("click", toggleMusic);
+    volume.addEventListener("input", event => { audio.volume = Number(event.target.value); });
+
+    document.querySelector("#openBook").addEventListener("click", async () => {
+      if (audio.paused) await toggleMusic();
+      document.querySelector(".intro").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    });
+    document.querySelector("#replay").addEventListener("click", () => {
+      document.querySelector("#top").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    });
+
+    const storageKey = "xiaorunbao-photo-annotations-v1";
+    const editorGrid = document.querySelector("#editorGrid");
+    const saveNotice = document.querySelector("#saveNotice");
+    let annotations = createDefaultAnnotations(photos);
+    let saveTimer;
+
+    function loadAnnotations() {
+      try {
+        const raw = localStorage.getItem(storageKey);
+        annotations = normalizeAnnotations(photos, raw ? JSON.parse(raw) : []);
+      } catch (_) {
+        annotations = createDefaultAnnotations(photos);
+        saveNotice.textContent = "本地保存暂不可用，请填写后立即导出";
+        saveNotice.classList.add("editor-warning");
+      }
+    }
+
+    function persistAnnotations() {
+      clearTimeout(saveTimer);
+      saveNotice.textContent = "正在保存…";
+      saveTimer = setTimeout(() => {
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(annotations));
+          saveNotice.textContent = "已自动保存到这台设备";
+          saveNotice.classList.remove("editor-warning");
+        } catch (_) {
+          saveNotice.textContent = "无法自动保存，请现在导出标注文件";
+          saveNotice.classList.add("editor-warning");
+        }
+      }, 180);
+    }
+
+    function updateProgress() {
+      const done = annotationProgress(annotations);
+      document.querySelector("#progressText").textContent = `${done} / ${photos.length}`;
+      document.querySelector("#progressBar").style.width = `${done / photos.length * 100}%`;
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>'"]/g, character => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
+      })[character]);
+    }
+
+    function renderEditor() {
+      editorGrid.innerHTML = "";
+      sortAnnotations(annotations).forEach((item, index) => {
+        const card = document.createElement("article");
+        card.className = "annotation-card";
+        card.dataset.id = item.id;
+        card.innerHTML = `
+          <figure class="annotation-preview">
+            <img src="assets/photos/${item.id}.webp" alt="待标注的旅行照片 ${item.id}" loading="lazy">
+            <figcaption>${item.id}</figcaption>
+          </figure>
+          <div class="annotation-fields">
+            <div class="field-row">
+              <label for="place-${item.id}">地点</label>
+              <input id="place-${item.id}" data-field="place" value="${escapeHtml(item.place)}" placeholder="例如：冲绳美丽海水族馆">
+            </div>
+            ${index > 0 ? '<button class="copy-place" type="button" data-copy-place>同上一地点</button>' : ''}
+            <div class="compact-fields">
+              <div class="field-row">
+                <label for="date-${item.id}">日期</label>
+                <input id="date-${item.id}" data-field="date" value="${escapeHtml(item.date)}" placeholder="例如：2025.06">
+              </div>
+              <div class="field-row">
+                <label for="order-${item.id}">顺序</label>
+                <input id="order-${item.id}" data-field="order" type="number" min="1" max="${photos.length}" value="${item.order}">
+              </div>
+            </div>
+            <div class="field-row">
+              <label for="story-${item.id}">回忆故事</label>
+              <textarea id="story-${item.id}" data-field="story" placeholder="那天发生了什么，最想记住哪一刻？">${escapeHtml(item.story)}</textarea>
+            </div>
+          </div>`;
+        editorGrid.appendChild(card);
+      });
+      updateProgress();
+    }
+
+    function enterEditor() {
+      audio.pause();
+      player.classList.remove("playing");
+      document.body.classList.add("editing");
+      const url = new URL(location.href);
+      url.searchParams.set("edit", "1");
+      history.replaceState(null, "", url);
+      loadAnnotations();
+      renderEditor();
+      scrollTo(0, 0);
+    }
+
+    function leaveEditor() {
+      document.body.classList.remove("editing");
+      const url = new URL(location.href);
+      url.searchParams.delete("edit");
+      history.replaceState(null, "", url);
+      scrollTo(0, 0);
+    }
+
+    document.querySelector("#backToBook").addEventListener("click", leaveEditor);
+
+    editorGrid.addEventListener("input", event => {
+      const field = event.target.dataset.field;
+      if (!field) return;
+      const card = event.target.closest(".annotation-card");
+      const item = annotations.find(entry => entry.id === card.dataset.id);
+      if (!item) return;
+      item[field] = field === "order"
+        ? Math.min(photos.length, Math.max(1, Number(event.target.value) || 1))
+        : event.target.value;
+      updateProgress();
+      persistAnnotations();
+    });
+
+    editorGrid.addEventListener("change", event => {
+      if (event.target.dataset.field === "order") renderEditor();
+    });
+
+    editorGrid.addEventListener("click", event => {
+      const button = event.target.closest("[data-copy-place]");
+      if (!button) return;
+      const sorted = sortAnnotations(annotations);
+      const currentId = button.closest(".annotation-card").dataset.id;
+      const currentIndex = sorted.findIndex(item => item.id === currentId);
+      if (currentIndex < 1) return;
+      const target = annotations.find(item => item.id === currentId);
+      target.place = sorted[currentIndex - 1].place;
+      persistAnnotations();
+      renderEditor();
+    });
+
+    document.querySelector("#exportAnnotations").addEventListener("click", () => {
+      const payload = createExportPayload(normalizeAnnotations(photos, annotations));
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      const href = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = href;
+      link.download = "xiaorunbao-photo-annotations.json";
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(href), 1000);
+      saveNotice.textContent = "标注文件已导出，请把它发给我";
+    });
+
+    document.querySelector("#clearAnnotations").addEventListener("click", () => {
+      if (!confirm("确定清空全部地点、日期和故事吗？此操作无法撤销。")) return;
+      annotations = createDefaultAnnotations(photos);
+      try { localStorage.removeItem(storageKey); } catch (_) {}
+      renderEditor();
+      saveNotice.textContent = "已清空，可以重新填写";
+    });
+
+    if (new URL(location.href).searchParams.get("edit") === "1") enterEditor();
+  </script>
+</body>
+</html>
